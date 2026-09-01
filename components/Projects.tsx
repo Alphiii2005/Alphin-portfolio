@@ -1,4 +1,5 @@
-import { image } from "motion/react-client";
+// Projects.tsx
+
 import ProjectCard from "./ProjectCard";
 
 const projects = [
@@ -27,15 +28,15 @@ export default function Projects() {
 
         {/* Heading */}
         <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#B8AEA0]">
             Projects
           </p>
 
-          <h2 className="mt-3 bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-400 bg-clip-text text-5xl font-bold text-transparent md:text-7xl">
+          <h2 className="mt-3 text-5xl font-bold text-[#D6B98C] md:text-7xl">
             Things I've Built
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#B8AEA0]">
             A collection of projects I've built while learning, experimenting,
             and turning ideas into working applications.
           </p>

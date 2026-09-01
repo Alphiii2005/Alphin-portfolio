@@ -6,13 +6,13 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 px-6 py-4 backdrop-blur-lg">
+    <nav className="fixed top-0 z-50 w-full border-b border-[#4D4845]/40 bg-[#1F1D20]/80 px-6 py-4 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between">
 
         {/* Logo */}
         <a
           href="#"
-          className="text-xl font-bold transition hover:text-yellow-400"
+          className="text-xl font-bold text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
         >
           Alphin
         </a>
@@ -21,28 +21,28 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           <a
             href="#about"
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             About
           </a>
 
           <a
             href="#timeline"
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             Journey
           </a>
 
           <a
             href="#projects"
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             Projects
           </a>
 
           <a
             href="#connect"
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             Connect
           </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-2xl md:hidden"
+          className="text-2xl text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2] md:hidden"
           aria-label="Toggle navigation menu"
         >
           {menuOpen ? "✕" : "☰"}
@@ -61,12 +61,12 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {menuOpen && (
-        <div className="mt-4 flex flex-col items-center gap-5 border-t border-white/10 pt-5 md:hidden">
+        <div className="mt-4 flex flex-col items-center gap-5 border-t border-[#4D4845]/40 pt-5 md:hidden">
 
           <a
             href="#about"
             onClick={() => setMenuOpen(false)}
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             About
           </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
           <a
             href="#timeline"
             onClick={() => setMenuOpen(false)}
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             Journey
           </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
           <a
             href="#projects"
             onClick={() => setMenuOpen(false)}
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             Projects
           </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
           <a
             href="#connect"
             onClick={() => setMenuOpen(false)}
-            className="transition hover:text-yellow-400"
+            className="text-[#F5EDDC] transition-colors duration-300 hover:text-[#D7C9B2]"
           >
             Connect
           </a>

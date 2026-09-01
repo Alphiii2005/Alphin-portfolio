@@ -1,3 +1,5 @@
+// ProjectCard.tsx
+
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -12,30 +14,31 @@ type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-white/[0.08]">
+    <div className="group relative overflow-hidden rounded-3xl border border-[#3A332C] bg-[#1D1A17] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#D6B98C]/50 hover:bg-[#25211D]">
 
-      {/* Gradient glow */}
-      <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-purple-500/20 blur-3xl transition-all duration-500 group-hover:bg-purple-500/30" />
+      {/* Warm ambient glow */}
+      <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-[#D6B98C]/10 blur-3xl transition-all duration-500 group-hover:bg-[#D6B98C]/20" />
 
       <div className="relative">
 
-        <div className="relative mb-6 h-56 overflow-hidden rounded-2xl border border-white/10">
-            <Image
-                src={project.image}
-                alt={`${project.name} project preview`}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition duration-500 group-hover:scale-105"
-            />
+        {/* Project image */}
+        <div className="relative mb-6 h-56 overflow-hidden rounded-2xl border border-[#3A332C] bg-[#141312]">
+          <Image
+            src={project.image}
+            alt={`${project.name} project preview`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
         </div>
 
         {/* Project title */}
-        <h3 className="text-2xl font-bold transition-colors duration-300 group-hover:text-yellow-400">
+        <h3 className="text-2xl font-bold text-[#F3EBDD] transition-colors duration-300 group-hover:text-[#D6B98C]">
           {project.name}
         </h3>
 
         {/* Description */}
-        <p className="mt-4 leading-7 text-gray-400">
+        <p className="mt-4 leading-7 text-[#B8AEA0]">
           {project.description}
         </p>
 
@@ -44,7 +47,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.technologies.map((technology) => (
             <span
               key={technology}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300 transition-colors duration-300 group-hover:border-white/20"
+              className="rounded-full border border-[#3A332C] bg-[#141312] px-3 py-1 text-sm text-[#B8AEA0] transition-colors duration-300 group-hover:border-[#D6B98C]/30 group-hover:text-[#D6B98C]"
             >
               {technology}
             </span>
@@ -59,7 +62,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:text-yellow-400"
+            className="flex items-center gap-2 rounded-lg border border-[#3A332C] px-4 py-2 text-sm text-[#F3EBDD] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B98C] hover:bg-[#D6B98C] hover:text-[#1D1A17]"
           >
             <FaGithub size={16} />
             GitHub
@@ -70,7 +73,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:text-yellow-400"
+            className="flex items-center gap-2 rounded-lg border border-[#3A332C] px-4 py-2 text-sm text-[#F3EBDD] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B98C] hover:bg-[#D6B98C] hover:text-[#1D1A17]"
           >
             <FaExternalLinkAlt size={14} />
             Live Demo

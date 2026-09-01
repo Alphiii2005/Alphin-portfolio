@@ -1,22 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #141312;
+  --surface: #1D1A17;
+  --border: #3A332C;
+
+  --muted: #B8AEA0;
+
+  --beige: #D6B98C;
+  --copper: #C98F65;
+
+  --cream: #F3EBDD;
+  --foreground: #F3EBDD;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base */
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
@@ -25,6 +34,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Blob animation */
 @keyframes blob {
   0%,
   100% {
@@ -40,6 +50,26 @@ body {
   animation: blob 8s ease-in-out infinite;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Text selection */
+::selection {
+  background: var(--beige);
+  color: var(--background);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--beige);
 }
