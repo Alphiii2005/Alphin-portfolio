@@ -37,10 +37,11 @@ export default function Hero() {
             </a>
 
             <a
-              href="#connect"
-              className="rounded-lg border border-[#3A332C] px-6 py-3 text-[#F3EBDD] transition-all duration-300 hover:-translate-y-1 hover:border-[#C98F65] hover:bg-[#C98F65] hover:text-[#141312]"
+              href="/resume.pdf"
+              download="Alphin-Shaiju-Resume.pdf"
+              className="rounded-lg border border-[#7B7369] px-6 py-3 text-[#F5EDDC] transition-all duration-300 hover:-translate-y-1 hover:border-[#D7C9B2] hover:bg-[#D7C9B2] hover:text-[#1F1D20]"
             >
-              Contact Me
+              Download Resume
             </a>
 
           </div>
