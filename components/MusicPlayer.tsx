@@ -11,7 +11,7 @@ import {
 const tracks = [
   {
     name: "Interstellar 🌌",
-    src: "/music/int.mp4",
+    src: "/music/in.mp4",
   },
   {
     name: "Oppenheimer ⚛️",
