@@ -1,127 +1,224 @@
 "use client";
 
 import { motion } from "motion/react";
+import {
+  FaCode,
+  FaGraduationCap,
+  FaRocket,
+} from "react-icons/fa";
+
+const journey = [
+  {
+    year: "2024",
+    title: "The Beginning",
+    subtitle: "Started Programming",
+    description:
+      "Started exploring programming and discovered an interest in building things with code. Began learning the fundamentals and experimenting with different technologies.",
+    icon: FaCode,
+    number: "01",
+  },
+  {
+    year: "2025",
+    title: "Building For Real",
+    subtitle: "Full-Stack Development",
+    description:
+      "Moved from learning individual technologies to building complete applications. Worked with Python, Django, JavaScript, React and databases while learning how frontend and backend systems connect.",
+    icon: FaRocket,
+    number: "02",
+  },
+  {
+    year: "2026",
+    title: "Going Deeper",
+    subtitle: "Computer Science & AI",
+    description:
+      "Studying Computer Science at Wrexham University while building larger projects and exploring AI-powered applications, modern web development and software engineering.",
+    icon: FaGraduationCap,
+    number: "03",
+  },
+];
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="px-6 py-24">
-      <div className="mx-auto max-w-5xl">
+    <section
+      id="timeline"
+      className="relative overflow-hidden bg-[#F7F3EC] px-6 py-32 text-[#1F1D20]"
+    >
+      {/* Decorative background text */}
+      <div className="pointer-events-none absolute -right-20 top-10 select-none text-[12rem] font-black leading-none text-[#1F1D20]/[0.025] md:text-[18rem]">
+        JOURNEY
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Heading */}
-        <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#B8AEA0]">
-            My Journey
-          </p>
+        <div className="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
 
-          <h2 className="mt-3 text-5xl font-bold text-[#D6B98C] md:text-7xl">
-            The Road So Far
-          </h2>
+          <div>
+            <div className="flex items-center gap-4">
+              <span className="h-px w-12 bg-[#C98F65]" />
+
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B7369]">
+                My Journey
+              </p>
+            </div>
+
+            <h2 className="mt-6 max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight text-[#1F1D20] md:text-7xl lg:text-8xl">
+              From curiosity
+              <br />
+              to <span className="text-[#C98F65]">creation.</span>
+            </h2>
+          </div>
+
+          <p className="max-w-sm text-base leading-7 text-[#7B7369] md:pb-2">
+            A timeline of how I went from writing my first programs to
+            building full-stack applications and studying Computer Science.
+          </p>
         </div>
 
-        {/* Timeline */}
+        {/* Journey */}
         <div className="relative">
 
-          {/* Timeline line */}
-          <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-[#D6B98C] via-[#C98F65] to-[#3A332C] md:left-1/2 md:-translate-x-1/2" />
+          {/* Main connecting line */}
+          <div className="absolute left-5 top-0 h-full w-px bg-[#D7C9B2] md:left-1/2 md:-translate-x-1/2" />
 
-          {/* 2024 */}
+          {/* Animated line */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="relative mb-16 md:flex md:items-center md:justify-between"
-          >
-            <div className="ml-12 md:ml-0 md:w-[45%] md:text-right">
-              <p className="text-2xl font-bold text-[#D6B98C]">
-                2024
-              </p>
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="absolute left-5 top-0 w-px bg-[#C98F65] md:left-1/2 md:-translate-x-1/2"
+          />
 
-              <h3 className="mt-2 text-xl font-semibold text-[#F3EBDD]">
-                Started Programming
-              </h3>
+          {journey.map((item, index) => {
+            const Icon = item.icon;
+            const isLeft = index % 2 === 0;
 
-              <p className="mt-3 leading-7 text-[#B8AEA0]">
-                Started exploring programming and discovered a passion for
-                building things with code.
-              </p>
-            </div>
+            return (
+              <motion.div
+                key={item.year}
+                initial={{
+                  opacity: 0,
+                  y: 70,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.2,
+                }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.15,
+                }}
+                className={`relative mb-24 last:mb-0 md:flex md:items-center ${
+                  isLeft ? "md:justify-start" : "md:justify-end"
+                }`}
+              >
 
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="absolute left-4 top-1 h-3 w-3 -translate-x-1/2 rounded-full bg-[#D6B98C] shadow-lg shadow-[#D6B98C]/30 md:left-1/2"
-            />
-          </motion.div>
+                {/* Year Marker */}
+                <div className="absolute left-5 top-8 z-20 -translate-x-1/2 md:left-1/2">
 
-          {/* 2025 */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="relative mb-16 md:flex md:flex-row-reverse md:items-center md:justify-between"
-          >
-            <div className="ml-12 md:ml-0 md:w-[45%]">
-              <p className="text-2xl font-bold text-[#C98F65]">
-                2025
-              </p>
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.25 + index * 0.15,
+                      type: "spring",
+                    }}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-[5px] border-[#F7F3EC] bg-[#C98F65] shadow-[0_0_0_1px_#C98F65]"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-white" />
+                  </motion.div>
+                </div>
 
-              <h3 className="mt-2 text-xl font-semibold text-[#F3EBDD]">
-                Full-Stack Development
-              </h3>
+                {/* Card */}
+                <div
+                  className={`ml-14 w-full md:ml-0 md:w-[43%] ${
+                    isLeft ? "md:mr-auto" : "md:ml-auto"
+                  }`}
+                >
+                  <div className="group relative overflow-hidden rounded-[2rem] border border-[#D7C9B2] bg-white/60 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C98F65]/50 hover:bg-white hover:shadow-[0_25px_70px_rgba(31,29,32,0.08)] md:p-9">
 
-              <p className="mt-3 leading-7 text-[#B8AEA0]">
-                Started building full-stack applications with Python, Django,
-                JavaScript and React while learning how modern web applications
-                work from frontend to backend.
-              </p>
-            </div>
+                    {/* Background number */}
+                    <span className="pointer-events-none absolute -right-3 -top-7 text-[9rem] font-black leading-none text-[#1F1D20]/[0.035] transition-all duration-500 group-hover:text-[#C98F65]/[0.08]">
+                      {item.number}
+                    </span>
 
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="absolute left-4 top-1 h-3 w-3 -translate-x-1/2 rounded-full bg-[#C98F65] shadow-lg shadow-[#C98F65]/30 md:left-1/2"
-            />
-          </motion.div>
+                    <div className="relative z-10">
 
-          {/* 2026 */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="relative md:flex md:items-center md:justify-between"
-          >
-            <div className="ml-12 md:ml-0 md:w-[45%] md:text-right">
-              <p className="text-2xl font-bold text-[#D6B98C]">
-                2026
-              </p>
+                      {/* Top row */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-5xl font-black tracking-tight text-[#C98F65]">
+                          {item.year}
+                        </span>
 
-              <h3 className="mt-2 text-xl font-semibold text-[#F3EBDD]">
-                Computer Science & AI
-              </h3>
+                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D7C9B2] bg-[#F7F3EC] text-[#C98F65] transition-all duration-500 group-hover:rotate-6 group-hover:border-[#C98F65]/40">
+                          <Icon />
+                        </div>
+                      </div>
 
-              <p className="mt-3 leading-7 text-[#B8AEA0]">
-                Studying Computer Science at Wrexham University, building
-                larger projects and exploring AI-powered applications.
-              </p>
-            </div>
+                      {/* Text */}
+                      <p className="mt-8 text-xs font-semibold uppercase tracking-[0.25em] text-[#8B8278]">
+                        {item.title}
+                      </p>
 
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="absolute left-4 top-1 h-3 w-3 -translate-x-1/2 rounded-full bg-[#D6B98C] shadow-lg shadow-[#D6B98C]/30 md:left-1/2"
-            />
-          </motion.div>
+                      <h3 className="mt-2 text-2xl font-bold text-[#1F1D20] md:text-3xl">
+                        {item.subtitle}
+                      </h3>
 
+                      <p className="mt-5 text-base leading-7 text-[#6F6962]">
+                        {item.description}
+                      </p>
+
+                      {/* Bottom accent */}
+                      <div className="mt-8 flex items-center gap-3">
+                        <span className="h-1 w-10 rounded-full bg-[#C98F65] transition-all duration-500 group-hover:w-20" />
+
+                        <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#9A9187]">
+                          Chapter {item.number}
+                        </span>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* Bottom statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-28 border-t border-[#D7C9B2] pt-10"
+        >
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8B8278]">
+                Still moving
+              </p>
+
+              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#1F1D20] md:text-5xl">
+                The story isn't finished yet.
+              </h3>
+            </div>
+
+            <p className="max-w-sm text-sm leading-6 text-[#7B7369]">
+              More projects, more problems to solve, and plenty more to learn.
+            </p>
+
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

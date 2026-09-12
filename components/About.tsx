@@ -1,165 +1,217 @@
+"use client";
+
+import {
+  FaCode,
+  FaGithub,
+  FaReact,
+  FaPython,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiDjango,
+  SiPostgresql,
+  SiJavascript,
+  SiCplusplus,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
 export default function About() {
+  const technologies = [
+    { name: "Python", icon: <FaPython /> },
+    { name: "JavaScript", icon: <SiJavascript /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "Next.js", icon: <SiNextdotjs /> },
+    { name: "Django", icon: <SiDjango /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    { name: "C++", icon: <SiCplusplus /> },
+    { name: "Tailwind", icon: <SiTailwindcss /> },
+    { name: "Git", icon: <FaGitAlt /> },
+    { name: "TypeScript", icon: <SiTypescript /> }
+  ];
+
   return (
-    <section id="about" className="px-6 py-24">
+    <section id="about" className="relative overflow-hidden px-6 py-32">
       <div className="mx-auto max-w-6xl">
 
-        {/* Heading */}
-        <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#B8AEA0]">
-            About Me
-          </p>
+        {/* Section Intro */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-10 bg-[#D6B98C]" />
 
-          <h2 className="mt-3 text-5xl font-bold text-[#D6B98C] md:text-7xl">
-            Building things that matter.
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#B8AEA0]">
+              About Me
+            </p>
+          </div>
+
+          <h2 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-[#F3EBDD] md:text-7xl">
+            I like turning
+            <span className="text-[#D6B98C]"> ideas </span>
+            into things people can actually use.
           </h2>
         </div>
 
-        {/* About paragraph */}
-        <div className="rounded-3xl border border-[#3A332C] bg-[#1D1A17] p-8 md:p-12">
-          <h3 className="text-2xl font-semibold text-[#F3EBDD]">
-            Who I am
-          </h3>
+        {/* Main About Layout */}
+        <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
 
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-[#B8AEA0]">
-            I'm Alphin, a Computer Science student and full-stack developer
-            who enjoys turning ideas into useful applications. I work mainly
-            with Python, Django, JavaScript, React and Next.js, and I'm
-            increasingly exploring AI and intelligent software systems.
-          </p>
+          {/* Main Story */}
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#3A332C] bg-[#1D1A17] p-8 md:p-12">
 
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-[#B8AEA0]">
-            I enjoy building projects from the ground up, learning by doing,
-            and experimenting with new technologies to solve real-world
-            problems. My goal is to create software that is not only
-            functional, but genuinely useful.
-          </p>
-        </div>
+            {/* Decorative number */}
+            <div className="absolute right-8 top-6 text-7xl font-bold text-[#F3EBDD]/[0.025] md:text-9xl">
+              01
+            </div>
 
-        {/* Tech Stack */}
-        <div className="mt-20">
-          <div className="mb-10 text-center">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#B8AEA0]">
-              Tech Stack
-            </p>
+            <div className="relative z-10">
+              <p className="text-sm uppercase tracking-[0.25em] text-[#D6B98C]">
+                Who I am
+              </p>
 
-            <h3 className="mt-3 text-3xl font-bold text-[#F3EBDD] md:text-4xl">
-              What I work with
-            </h3>
+              <h3 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-[#F3EBDD] md:text-4xl">
+                Computer Science student.
+                <br />
+                Full-stack developer.
+                <br />
+                Always building.
+              </h3>
+
+              <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-[#B8AEA0] md:text-lg">
+                <p>
+                  I'm Alphin, a Computer Science student who enjoys building
+                  software from the ground up. I work across the frontend and
+                  backend, with a particular interest in Python, Django,
+                  React, Next.js and modern web applications.
+                </p>
+
+                <p>
+                  Most of what I learn comes from building. Whether it's an
+                  AI assistant, an e-commerce platform or a new idea I've
+                  never tried before, I like taking something from concept
+                  to a working product.
+                </p>
+              </div>
+
+              {/* Bottom line */}
+              <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-[#3A332C] pt-7">
+                <div className="flex items-center gap-2 text-sm text-[#B8AEA0]">
+                  <span className="h-2 w-2 rounded-full bg-[#D6B98C]" />
+                  Currently studying Computer Science
+                </div>
+
+                <div className="hidden h-4 w-px bg-[#3A332C] sm:block" />
+
+                <div className="text-sm text-[#B8AEA0]">
+                  Based in the UK
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {/* Stats */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
 
-            {/* Programming Languages */}
-            <div className="group rounded-2xl border border-[#3A332C] bg-[#1D1A17] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#D6B98C]/60 hover:bg-[#25211D]">
-              <div className="mb-5 text-3xl transition-transform duration-300 group-hover:scale-110">
-                💻
+            <div className="group rounded-[2rem] border border-[#3A332C] bg-[#1D1A17] p-8 transition-all duration-500 hover:-translate-y-1 hover:border-[#D6B98C]/50">
+              <div className="flex items-start justify-between">
+                <span className="text-sm uppercase tracking-[0.2em] text-[#7B7369]">
+                  Projects
+                </span>
+
+                <FaCode className="text-xl text-[#D6B98C] transition-transform duration-500 group-hover:rotate-12" />
               </div>
 
-              <h4 className="text-xl font-semibold text-[#F3EBDD]">
-                Programming
-              </h4>
+              <p className="mt-8 text-5xl font-bold text-[#F3EBDD]">
+                02<span className="text-[#D6B98C]">+</span>
+              </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {[
-                  "Python",
-                  "JavaScript",
-                  "C",
-                  "C++",
-                ].map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-[#3A332C] bg-[#141312] px-3 py-1 text-sm text-[#B8AEA0] transition-colors duration-300 group-hover:border-[#D6B98C]/30"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
+              <p className="mt-3 text-sm leading-6 text-[#B8AEA0]">
+                Full-stack projects built from idea to working application.
+              </p>
             </div>
 
-            {/* Frontend */}
-            <div className="group rounded-2xl border border-[#3A332C] bg-[#1D1A17] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#C98F65]/60 hover:bg-[#25211D]">
-              <div className="mb-5 text-3xl transition-transform duration-300 group-hover:scale-110">
-                🎨
+            <div className="group rounded-[2rem] border border-[#3A332C] bg-[#1D1A17] p-8 transition-all duration-500 hover:-translate-y-1 hover:border-[#C98F65]/50">
+              <div className="flex items-start justify-between">
+                <span className="text-sm uppercase tracking-[0.2em] text-[#7B7369]">
+                  Focus
+                </span>
+
+                <span className="text-xl text-[#C98F65]">✦</span>
               </div>
 
-              <h4 className="text-xl font-semibold text-[#F3EBDD]">
-                Frontend
-              </h4>
+              <p className="mt-8 text-4xl font-bold text-[#F3EBDD]">
+                Full Stack
+              </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {[
-                  "React",
-                  "Next.js",
-                  "HTML",
-                  "CSS",
-                  "Tailwind CSS",
-                ].map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-[#3A332C] bg-[#141312] px-3 py-1 text-sm text-[#B8AEA0] transition-colors duration-300 group-hover:border-[#C98F65]/30"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
+              <p className="mt-3 text-sm leading-6 text-[#B8AEA0]">
+                Building useful products across frontend, backend and AI.
+              </p>
             </div>
 
-            {/* Backend */}
-            <div className="group rounded-2xl border border-[#3A332C] bg-[#1D1A17] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#D6B98C]/60 hover:bg-[#25211D]">
-              <div className="mb-5 text-3xl transition-transform duration-300 group-hover:scale-110">
-                ⚙️
-              </div>
+          </div>
+        </div>
 
-              <h4 className="text-xl font-semibold text-[#F3EBDD]">
-                Backend
-              </h4>
+        {/* Technologies */}
+        <div className="mt-24">
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {[
-                  "Django",
-                  "REST APIs",
-                  "PostgreSQL",
-                  "SQLite",
-                ].map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-[#3A332C] bg-[#141312] px-3 py-1 text-sm text-[#B8AEA0] transition-colors duration-300 group-hover:border-[#D6B98C]/30"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-[#B8AEA0]">
+                Tools of the trade
+              </p>
+
+              <h3 className="mt-3 text-3xl font-bold text-[#F3EBDD] md:text-4xl">
+                What I build with.
+              </h3>
             </div>
 
-            {/* AI */}
-            <div className="group rounded-2xl border border-[#3A332C] bg-[#1D1A17] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#C98F65]/60 hover:bg-[#25211D]">
-              <div className="mb-5 text-3xl transition-transform duration-300 group-hover:scale-110">
-                🤖
+            <p className="max-w-md text-sm leading-6 text-[#7B7369]">
+              A growing toolkit shaped by projects, experimentation and
+              constant learning.
+            </p>
+          </div>
+
+          {/* Tech Grid */}
+          <div className="grid grid-cols-2 overflow-hidden rounded-[2rem] border border-[#3A332C] bg-[#1D1A17] sm:grid-cols-3 md:grid-cols-5">
+            {technologies.map((technology, index) => (
+              <div
+                key={technology.name}
+                className={`group flex items-center gap-4 border-[#3A332C] p-6 transition-all duration-300 hover:bg-[#25211D] ${
+                  index < 5 ? "border-b" : ""
+                } ${
+                  index % 5 !== 4 ? "md:border-r" : ""
+                } ${
+                  index % 3 !== 2 ? "sm:border-r" : ""
+                }`}
+              >
+                <span className="text-xl text-[#7B7369] transition-all duration-300 group-hover:scale-110 group-hover:text-[#D6B98C]">
+                  {technology.icon}
+                </span>
+
+                <span className="text-sm font-medium text-[#B8AEA0] transition-colors duration-300 group-hover:text-[#F3EBDD]">
+                  {technology.name}
+                </span>
               </div>
+            ))}
+          </div>
+        </div>
 
-              <h4 className="text-xl font-semibold text-[#F3EBDD]">
-                AI & Tools
-              </h4>
+        {/* Bottom Statement */}
+        <div className="mt-24 flex flex-col items-start justify-between gap-8 border-t border-[#3A332C] pt-10 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-[#7B7369]">
+              Philosophy
+            </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {[
-                  "AI APIs",
-                  "LLMs",
-                  "OpenRouter",
-                  "Prompt Engineering",
-                  "Git",
-                  "GitHub",
-                ].map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-[#3A332C] bg-[#141312] px-3 py-1 text-sm text-[#B8AEA0] transition-colors duration-300 group-hover:border-[#C98F65]/30"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <p className="mt-4 max-w-2xl text-2xl font-medium leading-relaxed text-[#F3EBDD] md:text-3xl">
+              Learn something.
+              <span className="text-[#D6B98C]"> Build something. </span>
+              Repeat.
+            </p>
+          </div>
 
+          <div className="flex items-center gap-3 text-[#7B7369]">
+            <FaGithub className="text-xl" />
+            <span className="text-sm">Always learning through code</span>
           </div>
         </div>
 
