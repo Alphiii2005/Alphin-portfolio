@@ -179,7 +179,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="/Resume2026.pdf"
                 download="Alphin-Shaiju-Resume.pdf"
                 className="group flex items-center gap-2 text-sm font-medium text-[#625A52] transition-colors duration-300 hover:text-[#171518]"
               >
