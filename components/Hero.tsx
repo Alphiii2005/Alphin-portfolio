@@ -27,12 +27,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative -mt-[94px] min-h-screen overflow-hidden bg-white px-6 pt-[94px] text-[#171518]">
+    <section className="relative -mt-[94px] min-h-screen overflow-hidden bg-white px-4 pt-[94px] text-[#171518] sm:px-6">
       {/* Dynamic colour background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden bg-white">
         {/* Main colourful splash */}
         <div
-          className="absolute h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[90px] transition-all duration-500 ease-out"
+          className="absolute h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[70px] transition-all duration-500 ease-out sm:h-[520px] sm:w-[520px] sm:blur-[90px]"
           style={{
             left: `${mouse.x}%`,
             top: `${mouse.y}%`,
@@ -63,7 +63,7 @@ export default function Hero() {
 
         {/* Green / purple drifting splash */}
         <div
-          className="absolute h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[75px] transition-all duration-[900ms] ease-out"
+          className="absolute h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[60px] transition-all duration-[900ms] ease-out sm:h-[380px] sm:w-[380px] sm:blur-[75px]"
           style={{
             left: `${mouse.x}%`,
             top: `${mouse.y}%`,
@@ -95,7 +95,7 @@ export default function Hero() {
 
         {/* Warm yellow/orange glow */}
         <div
-          className="absolute h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[60px] transition-all duration-[1200ms] ease-out"
+          className="absolute h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[50px] transition-all duration-[1200ms] ease-out sm:h-[240px] sm:w-[240px] sm:blur-[60px]"
           style={{
             left: `${mouse.x}%`,
             top: `${mouse.y}%`,
@@ -112,7 +112,7 @@ export default function Hero() {
 
         {/* Blue edge glow */}
         <div
-          className="absolute h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[65px] transition-all duration-[800ms] ease-out"
+          className="absolute h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[55px] transition-all duration-[800ms] ease-out sm:h-[280px] sm:w-[280px] sm:blur-[65px]"
           style={{
             left: `${mouse.x}%`,
             top: `${mouse.y}%`,
@@ -139,42 +139,42 @@ export default function Hero() {
       </div>
 
       {/* Main */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] items-center">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-94px)] max-w-[1400px] items-center">
         <div className="grid w-full items-center lg:grid-cols-[1.05fr_0.95fr]">
           {/* Left */}
-          <div className="relative z-20 pt-28 lg:pt-10">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.35em] text-[#625A52]">
+          <div className="relative z-20 pt-12 sm:pt-20 lg:pt-10">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.28em] text-[#625A52] sm:mb-5 sm:text-sm sm:tracking-[0.35em]">
               Hi, I'm
             </p>
 
-            <h1 className="text-[clamp(5rem,13vw,11rem)] font-black leading-[0.76] tracking-[-0.085em] text-[#171518]">
+            <h1 className="text-[clamp(4.1rem,20vw,11rem)] font-black leading-[0.78] tracking-[-0.085em] text-[#171518] sm:text-[clamp(5rem,13vw,11rem)]">
               Alphin
             </h1>
 
-            <div className="mt-9 flex flex-wrap items-center gap-4 text-xl font-medium tracking-tight text-[#302C29] md:text-2xl">
+            <div className="mt-7 flex max-w-[360px] flex-wrap items-center gap-x-3 gap-y-2 text-base font-medium tracking-tight text-[#302C29] sm:mt-9 sm:max-w-none sm:gap-4 sm:text-xl md:text-2xl">
               <span>Full Stack Developer</span>
-              <span className="h-2 w-2 rounded-full bg-[#C98F65]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#C98F65] sm:h-2 sm:w-2" />
               <span>CS Student</span>
             </div>
 
-            <p className="mt-7 max-w-lg text-base leading-8 text-[#625A52] md:text-lg">
+            <p className="mt-5 max-w-[340px] text-sm leading-7 text-[#625A52] sm:mt-7 sm:max-w-lg sm:text-base sm:leading-8 md:text-lg">
               I build web applications, explore AI, and turn ideas into
               products that people can actually use.
             </p>
 
             {/* Actions */}
-            <div className="mt-9 flex flex-wrap items-center gap-7">
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4 sm:mt-9 sm:gap-7">
               <a
                 href="#projects"
-                className="group flex items-center gap-3 text-sm font-semibold text-[#171518]"
+                className="group flex items-center gap-2.5 text-sm font-semibold text-[#171518] sm:gap-3"
               >
                 <span className="relative">
                   Explore my work
                   <span className="absolute -bottom-1 left-0 h-px w-full origin-left bg-[#171518] transition-transform duration-300 group-hover:scale-x-0" />
                 </span>
 
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#171518] text-white transition-transform duration-300 group-hover:translate-x-1">
-                  <FiArrowUpRight size={15} />
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#171518] text-white transition-transform duration-300 group-hover:translate-x-1 sm:h-9 sm:w-9">
+                  <FiArrowUpRight size={14} />
                 </span>
               </a>
 
@@ -184,7 +184,7 @@ export default function Hero() {
                 className="group flex items-center gap-2 text-sm font-medium text-[#625A52] transition-colors duration-300 hover:text-[#171518]"
               >
                 <FiDownload
-                  size={16}
+                  size={15}
                   className="transition-transform duration-300 group-hover:-translate-y-0.5"
                 />
                 Resume
@@ -192,28 +192,34 @@ export default function Hero() {
             </div>
 
             {/* Small information row */}
-            <div className="mt-16 flex items-center gap-8 border-t border-[#171518]/10 pt-6">
+            <div className="mt-10 flex items-center gap-4 border-t border-[#171518]/10 pt-5 sm:mt-16 sm:gap-8 sm:pt-6">
               <div>
-                <p className="text-2xl font-bold text-[#171518]">02+</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#81786F]">
+                <p className="text-xl font-bold text-[#171518] sm:text-2xl">
+                  02+
+                </p>
+                <p className="mt-1 text-[9px] uppercase tracking-[0.15em] text-[#81786F] sm:text-[10px] sm:tracking-[0.2em]">
                   Projects
                 </p>
               </div>
 
-              <div className="h-10 w-px bg-[#171518]/10" />
+              <div className="h-8 w-px bg-[#171518]/10 sm:h-10" />
 
               <div>
-                <p className="text-2xl font-bold text-[#171518]">UK</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#81786F]">
+                <p className="text-xl font-bold text-[#171518] sm:text-2xl">
+                  UK
+                </p>
+                <p className="mt-1 text-[9px] uppercase tracking-[0.15em] text-[#81786F] sm:text-[10px] sm:tracking-[0.2em]">
                   Based
                 </p>
               </div>
 
-              <div className="h-10 w-px bg-[#171518]/10" />
+              <div className="h-8 w-px bg-[#171518]/10 sm:h-10" />
 
               <div>
-                <p className="text-2xl font-bold text-[#171518]">CS</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#81786F]">
+                <p className="text-xl font-bold text-[#171518] sm:text-2xl">
+                  CS
+                </p>
+                <p className="mt-1 text-[9px] uppercase tracking-[0.15em] text-[#81786F] sm:text-[10px] sm:tracking-[0.2em]">
                   Student
                 </p>
               </div>
@@ -221,10 +227,10 @@ export default function Hero() {
           </div>
 
           {/* Right */}
-          <div className="relative flex min-h-[600px] items-center justify-center lg:min-h-[760px]">
+          <div className="relative flex min-h-[380px] items-center justify-center pt-10 sm:min-h-[600px] sm:pt-0 lg:min-h-[760px]">
             {/* Portrait */}
             <div
-              className="animate-blob relative z-10 h-[500px] w-[390px] overflow-hidden rounded-[42%_58%_65%_35%/45%_35%_65%_55%] shadow-[0_35px_100px_rgba(23,21,24,0.18)] transition-transform duration-700 ease-out md:h-[610px] md:w-[470px]"
+              className="animate-blob relative z-10 h-[360px] w-[280px] overflow-hidden rounded-[42%_58%_65%_35%/45%_35%_65%_55%] shadow-[0_25px_70px_rgba(23,21,24,0.16)] transition-transform duration-700 ease-out xs:h-[400px] xs:w-[310px] sm:h-[500px] sm:w-[390px] sm:shadow-[0_35px_100px_rgba(23,21,24,0.18)] md:h-[610px] md:w-[470px]"
               style={{
                 transform: `translate(${(mouse.x - 50) * 0.025}px, ${
                   (mouse.y - 50) * 0.025
@@ -235,7 +241,7 @@ export default function Hero() {
                 src="/est.png"
                 alt="Portrait of Alphin"
                 fill
-                sizes="(max-width: 768px) 90vw, 470px"
+                sizes="(max-width: 480px) 280px, (max-width: 768px) 390px, 470px"
                 priority
                 className="object-cover"
               />
@@ -260,9 +266,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
       {/* Socials */}
-      <div className="absolute bottom-9 left-8 z-20 hidden items-center gap-5 md:flex lg:left-14">
+      <div className="mt-8 flex items-center gap-6 md:absolute md:bottom-9 md:left-8 md:mt-0 lg:left-14">
         <a
           href="https://github.com/alphiii2005"
           target="_blank"
