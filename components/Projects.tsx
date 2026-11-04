@@ -17,18 +17,20 @@ const projects = [
     live: "https://alphabot-aal9.onrender.com/",
     accent: "#C98F65",
   },
+  
   {
     number: "02",
     name: "Manjaly's Fresh Direct",
     category: "E-COMMERCE / FULL STACK",
     description:
-      "A full-stack e-commerce platform designed for a local meat business, with product management, cart functionality and Stripe checkout.",
-    technologies: ["Next.js", "Django", "Stripe"],
+      "A modern e-commerce platform built for a local meat business, featuring product browsing, dynamic cart management and streamlined order placement. Integrated with Google Sheets for order management and WhatsApp for customer communication and payments.",
+    technologies: ["Next.js", "TypeScript", "Google Apps Script", "Google Sheets", "Tailwind CSS"],
     image: "/manjalys-fd.png",
-    github: "https://github.com/Alphiii2005/manjalys-fresh-direct",
-    live: "#",
+    github: "https://github.com/Alphiii2005/manjalys-ltd",
+    live: "https://manjalys-ltd.18alphinnn.workers.dev/",
     accent: "#D6B98C",
   },
+
 ];
 
 export default function Projects() {
