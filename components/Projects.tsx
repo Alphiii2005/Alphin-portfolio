@@ -14,7 +14,7 @@ const projects = [
     technologies: ["Python", "Django", "AI APIs"],
     image: "/alphabot.png",
     github: "https://github.com/Alphiii2005/alphabot-live",
-    live: "https://alphabot-aal9.onrender.com/",
+    live: "https://alphabot-live.vercel.app/",
     accent: "#C98F65",
   },
   
